@@ -14,11 +14,11 @@
     { nixpkgs, home-manager, ... }:
     {
       homeConfigurations."neernaredi" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs-stable {
+        pkgs = import nixpkgs {
             system = "x86_64-linux";
             config = {
               allowUnfree = true;
-            }
+            };
           };
 
         # Specify your home configuration modules here, for example,
