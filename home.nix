@@ -80,4 +80,19 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs = {
+      zsh = {
+      enable = true;
+      oh-my-zsh = {
+        enable = true;
+        theme = "candy";
+        plugins = [
+          "git"
+          "colorize"
+          "podman"
+          "rust"
+        ];
+      };
+    };
+  };
 }
