@@ -13,11 +13,11 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      system = "aarch64-darwin";
+      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."neer.naredi" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."neernaredi" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
