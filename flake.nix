@@ -12,13 +12,14 @@
 
   outputs =
     { nixpkgs, home-manager, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
     {
       homeConfigurations."neernaredi" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config = {
+              allowUnfree = true;
+            }
+          };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
