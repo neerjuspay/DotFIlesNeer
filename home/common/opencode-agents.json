@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-litellm/dev/assets/oh-my-litellm.schema.json",
+  "agents": {
+    "hephaestus": {
+      "model": "litellm/open-large"
+    },
+    "oracle": {
+      "model": "litellm/open-large"
+    },
+    "librarian": {
+      "model": "litellm/open-large"
+    },
+    "explore": {
+      "model": "litellm/open-large"
+    },
+    "multimodal-looker": {
+      "model": "litellm/open-large"
+    },
+    "prometheus": {
+      "model": "litellm/open-large"
+    },
+    "metis": {
+      "model": "litellm/open-large"
+    },
+    "momus": {
+      "model": "litellm/open-large"
+    },
+    "atlas": {
+      "model": "litellm/open-large"
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "litellm/open-large"
+    },
+    "ultrabrain": {
+      "model": "litellm/open-large"
+    },
+    "deep": {
+      "model": "litellm/open-large"
+    },
+    "artistry": {
+      "model": "litellm/open-large"
+    },
+    "quick": {
+      "model": "litellm/open-large"
+    },
+    "unspecified-low": {
+      "model": "litellm/open-large"
+    },
+    "unspecified-high": {
+      "model": "litellm/open-large"
+    },
+    "writing": {
+      "model": "litellm/open-large"
+    }
+  }
+}
