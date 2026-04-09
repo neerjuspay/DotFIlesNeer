@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
 
-{
+{ 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
+  imports = [ ./home-modules/claude-envs.nix ];
   home.username = "neernaredi";
   home.homeDirectory = "/home/neernaredi";
 
@@ -28,7 +29,22 @@
     google-chrome
     postman
     brave
-
+    podman
+    nixfmt
+    omnix
+    warp-terminal
+    cloudflared
+    yarn
+    nodejs_24
+    tmux
+    # localstack
+    python3
+    python3Packages.pip
+    python3Packages.virtualenv
+    awscli2
+    claude-code
+    opencode
+    bun
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -66,8 +82,7 @@
   #
   #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
   #
-  # or
-  #
+
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
   #
   # or
@@ -81,17 +96,18 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs = {
-      zsh = {
+    direnv = {
       enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+    zsh = {
+      enable = true;
+      initContent = "source /home/neernaredi/ardraEnvs";
       oh-my-zsh = {
         enable = true;
         theme = "candy";
-        plugins = [
-          "git"
-          "colorize"
-          "podman"
-          "rust"
-        ];
+        plugins = [ "git" "colorize" "podman" "rust" ];
       };
     };
   };
