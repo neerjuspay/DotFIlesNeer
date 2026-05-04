@@ -16,6 +16,9 @@
         tmux # Terminal multiplexer
         direnv # Directory environment
         nixfmt # Nix formatter
+        htop 
+        ngrok
+
       ]
 
       # === Development Tools ===
