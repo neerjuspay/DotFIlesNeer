@@ -16,7 +16,7 @@
         tmux # Terminal multiplexer
         direnv # Directory environment
         nixfmt # Nix formatter
-        htop 
+        htop
         ngrok
 
       ]
@@ -57,12 +57,6 @@
         google-cloud-sdk
         cloudflared
         omnix # Nix helper
-      ]
-
-      # === AI & Productivity Tools ===
-      [
-        claude-code
-        opencode
       ]
 
       # === Browsers ===

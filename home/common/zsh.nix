@@ -143,6 +143,9 @@
 
       # Bat as man pager (if installed)
       MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+
+      # Add pipx to PATH
+      PATH = "$HOME/.local/bin:$PATH";
     };
 
     # Local additions (per-host customizations can go here)

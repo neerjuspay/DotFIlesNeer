@@ -3,15 +3,17 @@
   config,
   pkgs,
   lib,
+  llm-agents-pkgs,
   ...
 }:
 
 {
-  # AI tools packages
-  home.packages = with pkgs; [
-    claude-code
-    opencode
-    google-cloud-sdk
+  # AI tools packages (claude-code + opencode from llm-agents.nix for daily updates)
+  home.packages = [
+    llm-agents-pkgs.claude-code
+    llm-agents-pkgs.opencode
+    llm-agents-pkgs.omp
+    pkgs.google-cloud-sdk
   ];
 
   # OpenCode configuration files

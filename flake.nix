@@ -1,4 +1,9 @@
 {
+  nixConfig = {
+    extra-substituters = [ "https://cache.numtide.com" ];
+    extra-trusted-public-keys = [ "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g=" ];
+  };
+
   description = "Home Manager configuration - WorkPC (NixOS) and WorkMac (macOS)";
 
   inputs = {
@@ -16,6 +21,9 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # AI coding agents (daily updates + binary cache)
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
@@ -24,6 +32,7 @@
       nixpkgs,
       home-manager,
       sops-nix,
+      llm-agents,
       ...
     }:
     let
@@ -56,6 +65,7 @@
 
           extraSpecialArgs = {
             inherit username homeDirectory;
+            llm-agents-pkgs = llm-agents.packages.${system};
           };
 
           modules = [

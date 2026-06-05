@@ -221,7 +221,8 @@
     }
   },
   "plugin": [
-    "oh-my-openagent"
+    "oh-my-openagent",
+    "opencode-claude-auth@latest"
   ],
   "lsp": false,
   "formatter": false
